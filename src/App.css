@@ -1,0 +1,10 @@
+body,
+html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: radial-gradient(#fff, #fdfd);
+}
+.App {
+    text-align: center;
+}
