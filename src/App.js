@@ -12,7 +12,7 @@ class App extends Component {
                 imgSrc: profilPic,
                 profession: "IT engineer",
             },
-            time: 0,
+            time: new Date(),
             show: true,
         };
     }
@@ -20,8 +20,10 @@ class App extends Component {
         this.setState((state) => ({ show: !this.state.show }));
     };
     componentDidMount() {
-        setInterval(() => {
-            this.setState((prevState) => ({ time: prevState.time + 1 }));
+        this.interval = setInterval(() => {
+            this.setState((prevState) => ({
+                time: new Date(),
+            }));
         }, 1000);
     }
 
@@ -64,7 +66,7 @@ class App extends Component {
                         <h3 style={{ fontStyle: "bold", color: "blue" }}>
                             Profession: {this.state.Person.profession}
                         </h3>
-                        <h3>Timing:{this.state.time}</h3>
+                        <h3>Timing:{this.state.time.toLocaleTimeString()}</h3>
                     </div>
                 )}
             </div>
